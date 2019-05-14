@@ -6,3 +6,8 @@ function createCar(plate, brand, color) {
         + "</br> COLOR: " + car.color + "</br> BRAND: " + brand
         + " WHEELS: " + JSON.stringify(car.wheels);
 }
+function carFormSubmit(plate, brand, color) {
+    var userCar = new Car(plate, brand, color);
+    var numPlate = document.getElementById("inputPlate").innerText;
+    console.log(numPlate);
+}

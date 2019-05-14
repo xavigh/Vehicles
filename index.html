@@ -19,9 +19,9 @@
     }
 
   </style>
-  <script src="../models/car.js"></script>
-  <script src="../models/wheel.js"></script>
-  <script src="../controllers/controller.js"></script>
+  <script src="models/car.js"></script>
+  <script src="models/wheel.js"></script>
+  <script src="controllers/controller.js"></script>
 </head>
 <body>
 
@@ -50,9 +50,9 @@
   </div>
 </nav>
 
-<div class="container" style="margin-top:30px" >
+<div  style="margin-top:30px" >
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3">
 
       <h2>Vehicles</h2>
       <div>
@@ -67,14 +67,55 @@
       </div>
       
     </div>
-    <div class="col-sm-6">
-        <p id="carInfo"></p>
-        <button onclick="createCar('1212SDS','SEAT','ROJO')">Create car</button>
+    <div class="col-sm-3">
+          
+        
+        <details>
+            <summary> Input Car info here...</summary>
+            <div id="formCar">
+              <p>
+                <label>Number Plate</label><br>
+                <input type="text" name="inputPlate">
+              </p>
+              <p>
+                <label>Made</label><br>
+                <input type="text" name="inputMade">
+              </p>
+              <p>
+                <label>Color</label><br>
+                <input type="text" name="inputColor">
+              </p>  
+              <p>    
+                  <button onclick="carFormSubmit('1212SDS','SEAT','ROJO')">Create car</button>
+              </p>   
+            </div> <!--end formCar-->
+    
+          </details>      
+
+          <details>
+              <summary> Input Wheels info here...</summary>
+              <div id="wheelsForm">
+                <p>
+                  <label>Wheel</label><br>
+                  <input type="text" id="inputPlate">
+                </p>
+                <p>
+                  <label>radious</label><br>
+                  <input type="text" id="inputMade">
+                </p>
+                <p>
+                  <label>radious</label><br>
+                  <input type="text" id="inputColor">
+                </p>            
+              </div> <!--end formCar-->      
+            </details>      
 
     </div>
-    
-  </div>
+        <div class="col-sm-6">
+            <p id="carInfo"></p>
 
+      </div>
+  </div>      
       <div class="jumbotron text-center" style="margin-bottom:0">
         <p>Footer</p>
       </div>
