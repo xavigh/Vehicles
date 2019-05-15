@@ -1,8 +1,6 @@
 let userCar = Car;
 
-let plate = <HTMLInputElement>document.getElementById("inputPlate");
-let brand = <HTMLInputElement>document.getElementById("inputBranch");
-let color = <HTMLInputElement>document.getElementById("inputColor");
+
     
            
 
@@ -18,16 +16,20 @@ function createCar(plate: string, brand: string, color: string) {
 }
 
 // Gather input from user and display
-function carFormSubmit(){      
-   
+function carFormSubmit(){   
+    let plate = <HTMLInputElement>document.getElementById("inputPlate");
+    let brand = <HTMLInputElement>document.getElementById("inputBranch");
+    let color = <HTMLInputElement>document.getElementById("inputColor");   
+    
     
     let userCar = new Car(plate.value, color.value, brand.value); 
     
 
 
     if(plate.value && brand.value && color.value) {            
-       
-        // here we send the data to the browser
+       // here we send the data to the browser
+        displayCarData();
+        
         console.log("num plate is "+ plate.value + "<br>"); 
         console.log("made of car is "+ brand.value); 
         console.log("Color is "+ color.value); 
@@ -41,7 +43,11 @@ function carFormSubmit(){
 
 // display car data input
 function displayCarData(){
+    
     // we send the input data to the browser
+    let plate = <HTMLInputElement>document.getElementById("inputPlate");
+    let brand = <HTMLInputElement>document.getElementById("inputBranch");
+    let color = <HTMLInputElement>document.getElementById("inputColor");   
    
     let dataInput = <HTMLInputElement>document.getElementById('carInfo');
     dataInput.innerHTML ="num plate is "+ plate.value + "<br>"

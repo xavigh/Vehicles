@@ -1,8 +1,5 @@
 "use strict";
 var userCar = Car;
-var plate = document.getElementById("inputPlate");
-var brand = document.getElementById("inputBranch");
-var color = document.getElementById("inputColor");
 function createCar(plate, brand, color) {
     var car = new Car(plate, color, brand);
     car.addWheel(new Wheel(2, "SEAT"));
@@ -13,9 +10,13 @@ function createCar(plate, brand, color) {
 }
 // Gather input from user and display
 function carFormSubmit() {
+    var plate = document.getElementById("inputPlate");
+    var brand = document.getElementById("inputBranch");
+    var color = document.getElementById("inputColor");
     var userCar = new Car(plate.value, color.value, brand.value);
     if (plate.value && brand.value && color.value) {
         // here we send the data to the browser
+        displayCarData();
         console.log("num plate is " + plate.value + "<br>");
         console.log("made of car is " + brand.value);
         console.log("Color is " + color.value);
@@ -29,6 +30,9 @@ function carFormSubmit() {
 // display car data input
 function displayCarData() {
     // we send the input data to the browser
+    var plate = document.getElementById("inputPlate");
+    var brand = document.getElementById("inputBranch");
+    var color = document.getElementById("inputColor");
     var dataInput = document.getElementById('carInfo');
     dataInput.innerHTML = "num plate is " + plate.value + "<br>"
         + "Brand is " + brand.value + "<br>"
