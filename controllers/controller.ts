@@ -59,4 +59,14 @@ function displayCarData(){
 // Gather input from user
 function wheelFormSubmit(){
 
+    
+
+    for(var i=0; i<=4; i++){
+         let brandIdELe = <HTMLInputElement>document.getElementById("idWheel"+i);
+         let diameterIdEle = <HTMLInputElement>document.getElementById("diameter"+i);
+
+         console.log(brandIdELe , diameterIdEle);
+    }
+
+    
 }

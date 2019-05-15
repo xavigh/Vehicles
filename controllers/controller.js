@@ -40,4 +40,9 @@ function displayCarData() {
 }
 // Gather input from user
 function wheelFormSubmit() {
+    for (var i = 0; i <= 4; i++) {
+        var brandIdELe = document.getElementById("idWheel" + i);
+        var diameterIdEle = document.getElementById("diameter" + i);
+        console.log(brandIdELe, diameterIdEle);
+    }
 }
