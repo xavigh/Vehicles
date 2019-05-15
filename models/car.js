@@ -1,5 +1,6 @@
 "use strict";
 var Car = /** @class */ (function () {
+    // constructor takes care of creating the car through an instance of Car Class.
     function Car(plate, color, brand) {
         this.wheels = new Array();
         this.plate = plate;
