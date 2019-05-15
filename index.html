@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Vehicles typescriptcon</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -17,112 +19,117 @@
       font-size: 1em;
       /*<!-- color: Tomato; -->*/
     }
-
   </style>
+
+</head>
+
+<body class="container">
+
+  <div class="text-center" style="margin-bottom:0;">
+
+    <h1>Exercici typescript Vehicles</h1>
+    <p>HTML5, CSS, Bootstrap4, Javascript and typescript</p>
+
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div style="margin-top:30px">
+    <div class="row">
+      <div class="col-sm-6 ">
+        <details>
+          <summary> Input Car info here...</summary>
+          <div id="formCar">
+            <div class="form-group">
+              <label>Number Plate</label><br>
+              <input type="text" name="inputplateForm" id="inputPlate">
+            </div>
+            <div class="form-group">
+              <label>Brand</label><br>
+              <input type="text" name="inputMadeForm" id="inputBranch">
+            </div>
+            <div class="form-group">
+              <label>Color</label><br>
+              <input type="text" name="inputColorForm" id="inputColor">
+            </div>
+
+            <p>
+              <button class="btn btn-primary" onclick="carFormSubmit()">Create car</button>
+            </p>
+        </details>
+      </div>
+      <!--end formCar-->
+    </div> <!-- end row-->
+    <div class="row">
+      <div class="col-sm-12 form-group">
+        <details>
+          <summary> Input Wheel's information here...</summary>
+          <div id="wheelsForm">
+            <div class="form-inline">
+              <label class="mb-2 mr-sm-2">Brand wheel 1</label>
+              <input type="text" id="idWheel1" class="form-group mb-2 mr-sm-2">
+              <label class="mb-2 mr-sm-2">Diameter wheel 1</label>
+              <input type="text" id="diameter1" class="form-group mb-2 mr-sm-2">
+            </div>
+            <div class="form-inline">
+              <label class="mb-2 mr-sm-2">Brand wheel 2</label>
+              <input type="text" id="idWheel2" class="form-group mb-2 mr-sm-2">
+              <label class="mb-2 mr-sm-2">Diameter wheel 2</label>
+              <input type="text" id="diameter2" class="form-group mb-2 mr-sm-2">
+            </div>
+            <div class="form-inline">
+              <label class="mb-2 mr-sm-2">Brand wheel 3</label>
+              <input type="text" id="idWheel3" class="form-group mb-2 mr-sm-2">
+              <label class="mb-2 mr-sm-2">Diameter wheel 2</label>
+              <input type="text" id="diameter3" class="form-group mb-2 mr-sm-2">
+            </div>
+            <div class="form-inline">
+              <label class="mb-2 mr-sm-2">Brand wheel 4</label>
+              <input type="text" id="idWwheel4" class="form-group mb-2 mr-sm-2">
+              <label class="mb-2 mr-sm-2">Diameter wheel 4</label>
+              <input type="text" id="diameter4" class="form-group mb-2 mr-sm-2">
+            </div>
+            <p>
+              <button class="btn btn-primary" onclick="wheelFormSubmit()">Add wheels</button>
+            </p>
+
+        </details>
+
+      </div>
+    </div>
+    <!--end form wheels-->
+  </div>
+  <div class="w-75 ">
+    <div id="carInfo" class="border border-dark w-50"></div>
+    <div id="wheelInfo" class="border border-dark w-50"></div>
+  </div>
+  </div>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Footer</p>
+  </div>
+  </div>
   <script src="models/car.js"></script>
   <script src="models/wheel.js"></script>
   <script src="controllers/controller.js"></script>
-</head>
-<body class="container">
-
-<div class="jumbotron text-center" style="margin-bottom:0;">
-  
-  <h1>Exercici typescript Vehicles</h1>
-  <p>HTML5, CSS, Bootstrap4, Javascript</p>
-</div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div  style="margin-top:30px" >
-    <div class="row">
-    <div class="col-sm-6 form-group" >       
-            <details>
-            <summary> Input Car info here...</summary>
-            <div id="formCar" >
-              <p>
-                <label>Number Plate</label><br>
-                <input type="text" name="inputplateForm" id="inputPlate" class="form-group">
-              </p>
-              <p>
-                <label>Made</label><br>
-                <input type="text" name="inputMadeForm" id="inputBranch" class="form-group">
-              </p>
-              <p>
-                <label>Color</label><br>
-                <input type="text" name="inputColorForm" id="inputColor" class="form-group">
-              </p>  
-              <p>    
-                  <button class="btn btn-primary" onclick="carFormSubmit()">Create car</button>
-              </p> 
-            </details>  
-            </div> <!--end formCar--> 
-          </div> <!-- end row--> 
-          <div class="row">
-            <div class="col-sm-12 form-group">
-              <details>
-                <summary> Input Wheel's information here...</summary>
-                <div id="wheelsForm">
-                  <div class="form-inline">
-                    <label class="mb-2 mr-sm-2">Brand wheel 1</label>
-                    <input type="text" id="idWheel1" class="form-group mb-2 mr-sm-2">
-                    <label class="mb-2 mr-sm-2">Diameter wheel 1</label>
-                    <input type="text" id="diameter1" class="form-group mb-2 mr-sm-2">
-                  </div>
-                  <div class="form-inline">
-                    <label class="mb-2 mr-sm-2">Brand wheel 2</label>
-                    <input type="text" id="idWheel2" class="form-group mb-2 mr-sm-2">
-                    <label class="mb-2 mr-sm-2">Diameter wheel 2</label>
-                    <input type="text" id="diameter2" class="form-group mb-2 mr-sm-2">
-                  </div>
-                  <div class="form-inline">
-                    <label class="mb-2 mr-sm-2">Brand wheel 3</label>
-                    <input type="text" id="idWheel3" class="form-group mb-2 mr-sm-2">
-                    <label class="mb-2 mr-sm-2">Diameter wheel 2</label>
-                    <input type="text" id="diameter3" class="form-group mb-2 mr-sm-2">
-                  </div>
-                  <div class="form-inline">
-                    <label class="mb-2 mr-sm-2">Brand wheel 4</label>
-                    <input type="text" id="idWwheel4" class="form-group mb-2 mr-sm-2">
-                    <label class="mb-2 mr-sm-2">Diameter wheel 4</label>
-                    <input type="text" id="diameter4" class="form-group mb-2 mr-sm-2">
-                  </div>
-                  <p>
-                      <button class="btn btn-primary" onclick="wheelFormSubmit()">Add wheels</button>
-                    </p>
-          
-              </details>
-             
-            </div>
-          </div>
-          <!--end form wheels-->         
-  </div>
-        <div class="w-75 ">
-            <div id="carInfo" class= "border border-dark w-50"></div>
-            <div id="wheelInfo" class= "border border-dark w-50"></div>
-        </div>
-  </div>      
-        <div class="jumbotron text-center" style="margin-bottom:0">
-        <p>Footer</p>
-        </div>
-</div>
 
 </body>
+
 </html>
