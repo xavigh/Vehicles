@@ -1,5 +1,6 @@
 "use strict";
-var userCar = Car;
+var userCar;
+// testing
 function createCar(plate, brand, color) {
     var car = new Car(plate, color, brand);
     car.addWheel(new Wheel(2, "SEAT"));
@@ -13,7 +14,7 @@ function carFormSubmit() {
     var plate = document.getElementById("inputPlate");
     var brand = document.getElementById("inputBranch");
     var color = document.getElementById("inputColor");
-    var userCar = new Car(plate.value, color.value, brand.value);
+    userCar = new Car(plate.value, color.value, brand.value);
     if (plate.value && brand.value && color.value) {
         // here we send the data to the browser
         displayCarData();
@@ -40,9 +41,18 @@ function displayCarData() {
 }
 // Gather input from user
 function wheelFormSubmit() {
-    for (var i = 0; i <= 4; i++) {
-        var brandIdELe = document.getElementById("idWheel" + i);
-        var diameterIdEle = document.getElementById("diameter" + i);
-        console.log(brandIdELe, diameterIdEle);
+    var dataWheels = document.getElementById("wheelInfo");
+    // **** error en .value from HTMLinputElement
+    for (var i = 1; i <= 4; i++) {
+        var brandId = document.getElementById("idWheel" + i);
+        var diameterId = document.getElementById("diameter" + i);
+        //we send the data of the wheels in html format
+        // cast diameterId value to a number
+        var wheel2 = new Wheel(Number(diameterId.value), String(brandId.value));
+        userCar.addWheel(wheel2);
     }
+    console.log(userCar);
+    console.log(userCar.wheels);
+    // concatenar resultados
+    //dataWheels.innerHTML = brandId.value + diameterId.value;
 }

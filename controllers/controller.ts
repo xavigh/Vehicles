@@ -1,12 +1,11 @@
-let userCar = Car;
 
+let userCar:Car;
 
-
+// testing
 function createCar(plate: string, brand: string, color: string) {
     let car = new Car(plate, color, brand);
     car.addWheel(new Wheel(2, "SEAT"));
     var info: any = document.getElementById('carInfo');
-
 
     info.innerHTML = "Car Number Plate: " + car.plate
         + "</br> COLOR: " + car.color + "</br> BRAND: " + brand
@@ -20,10 +19,7 @@ function carFormSubmit() {
     let color = <HTMLInputElement>document.getElementById("inputColor");
 
 
-    let userCar = new Car(plate.value, color.value, brand.value);
-
-
-
+     userCar = new Car(plate.value, color.value, brand.value);
     if (plate.value && brand.value && color.value) {
         // here we send the data to the browser
         displayCarData();
@@ -56,15 +52,23 @@ function displayCarData() {
 
 // Gather input from user
 function wheelFormSubmit() {
+    let dataWheels = <HTMLInputElement>document.getElementById("wheelInfo");
+        // **** error en .value from HTMLinputElement
+    for (var i = 1; i <= 4; i++) {
+        let brandId = <HTMLInputElement>document.getElementById("idWheel" + i);
+        let diameterId = <HTMLInputElement>document.getElementById("diameter" + i);
+        //we send the data of the wheels in html format
+        // cast diameterId value to a number
+        const wheel2= new Wheel(Number(diameterId.value), String(brandId.value) );
 
-
-
-    for (var i = 0; i <= 4; i++) {
-        let brandIdELe = <HTMLInputElement>document.getElementById("idWheel" + i);
-        let diameterIdEle = <HTMLInputElement>document.getElementById("diameter" + i);
-
-        console.log(brandIdELe, diameterIdEle);
+        userCar.addWheel(wheel2);
+       
+       
+       
     }
-
+    console.log(userCar);
+    console.log(userCar.wheels);
+    // concatenar resultados
+    //dataWheels.innerHTML = brandId.value + diameterId.value;
 
 }
