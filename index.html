@@ -55,9 +55,10 @@
   <div style="margin-top:30px">
     <div class="row">
       <div class="col-sm-6 ">
-        <details>
-          <summary> Input Car info here...</summary>
-          <div id="formCar">
+       
+          
+          <div id="formCarId" >
+              <h1> Input Car details</h1>
             <div class="form-group">
               <label>Number Plate</label><br>
               <input type="text" name="inputplateForm" id="inputPlate" value="asdaf">
@@ -74,15 +75,16 @@
             <p>
               <button class="btn btn-primary" onclick="carFormSubmit()">Create car</button>
             </p>
-        </details>
+       
       </div>
       <!--end formCar-->
     </div> <!-- end row-->
     <div class="row">
       <div class="col-sm-12 form-group">
-        <details>
-          <summary> Input Wheel's information here...</summary>
-          <div id="wheelsForm">
+        
+          
+          <div id="wheelsFormId" class="d-none">
+            <h2> Input Wheel's details</h2>
             <div class="form-inline">
               <label class="mb-2 mr-sm-2">Brand wheel 1</label>
               <input type="text" id="idWheel1" class="form-group mb-2 mr-sm-2" value="a">
@@ -109,17 +111,17 @@
             </div>
             <p>
               <button class="btn btn-primary" onclick="wheelFormSubmit()">Add wheels</button>
-            </p>
-
-        </details>
-
+            </p>       
       </div>
+      <div id="errWheelFormId" class="text-danger"> </div>
     </div>
     <!--end form wheels-->
   </div>
   <div class="w-75 ">
-    <div id="carInfo" class="border border-dark w-50"></div>
-    <div id="wheelInfo" class="border border-dark w-50"></div>
+    <div id="carInfo" > </div>
+
+    <div id="wheelInfo"> </div>
+
   </div>
   </div>
   <div class="jumbotron text-center" style="margin-bottom:0">
