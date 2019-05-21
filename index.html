@@ -26,10 +26,8 @@
 <body class="container">
 
   <div class="text-center" style="margin-bottom:0;">
-
     <h1>Exercici typescript Vehicles</h1>
     <p>HTML5, CSS, Bootstrap4, Javascript and typescript</p>
-
   </div>
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -55,78 +53,79 @@
   <div style="margin-top:30px">
     <div class="row">
       <div class="col-sm-6 ">
-       
-          
-          <div id="formCarId" >
-              <h1> Input Car details</h1>
-            <div class="form-group">
-              <label>Number Plate</label><br>
-              <input type="text" name="inputplateForm" id="inputPlate" value="asdaf">
-            </div>
-            <div class="form-group">
-              <label>Brand</label><br>
-              <input type="text" name="inputMadeForm" id="inputBranch" value="bdfd">
-            </div>
-            <div class="form-group">
-              <label>Color</label><br>
-              <input type="text" name="inputColorForm" id="inputColor" value="cdf">
-            </div>
+        <div id="formCarId">
+          <h1> Input Car details</h1>
+          <div class="form-group">
+            <label>Number Plate</label><br>
+            <input type="text" name="inputplateForm" id="inputPlate" value="1234-asd" class="form-control">
+            <p id="errNumPlate" class="text-danger"></p>
+          </div>
+          <div class="form-group">
+            <label>Brand</label><br>
+            <input type="text" name="inputMadeForm" id="inputBranch" value="bdfd" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Color</label><br>
+            <input type="text" name="inputColorForm" id="inputColor" value="cdf" class="form-control">
+          </div>
 
-            <p>
-              <button class="btn btn-primary" onclick="carFormSubmit()">Create car</button>
-            </p>
-       
-      </div>
-      <!--end formCar-->
-    </div> <!-- end row-->
-    <div class="row">
-      <div class="col-sm-12 form-group">
-        
-          
+          <p>
+            <button class="btn btn-primary" onclick="carFormSubmit()">Create car</button>
+          </p>
+
+        </div>
+        <!--end formCar-->
+      </div> <!-- end row-->
+      <div class="row">
+        <div class="col-sm-12 form-group">
           <div id="wheelsFormId" class="d-none">
             <h2> Input Wheel's details</h2>
             <div class="form-inline">
               <label class="mb-2 mr-sm-2">Brand wheel 1</label>
-              <input type="text" id="idWheel1" class="form-group mb-2 mr-sm-2" value="a">
+              <input type="text" id="idWheel1" class="form-group mb-2  form-control" value="a">
               <label class="mb-2 mr-sm-2">Diameter wheel 1</label>
-              <input type="text" id="diameter1" class="form-group mb-2 mr-sm-2" value="0">
+              <input type="text" id="diameter1" class="form-group mb-2 mr-sm-2 form-control" value="0">
+              <p id="errDiameter1" class="text-danger"></p>
             </div>
             <div class="form-inline">
               <label class="mb-2 mr-sm-2">Brand wheel 2</label>
-              <input type="text" id="idWheel2" class="form-group mb-2 mr-sm-2" value="a">
+              <input type="text" id="idWheel2" class="form-group mb-2 mr-sm-2 form-control" value="a">
               <label class="mb-2 mr-sm-2">Diameter wheel 2</label>
-              <input type="text" id="diameter2" class="form-group mb-2 mr-sm-2" value="0">
+              <input type="text" id="diameter2" class="form-group mb-2 mr-sm-2 form-control" value="0">
+              <p id="errDiameter2" class="text-danger"></p>
             </div>
             <div class="form-inline">
               <label class="mb-2 mr-sm-2">Brand wheel 3</label>
-              <input type="text" id="idWheel3" class="form-group mb-2 mr-sm-2" value="a">
+              <input type="text" id="idWheel3" class="form-group mb-2 mr-sm-2 form-control" value="a">
               <label class="mb-2 mr-sm-2">Diameter wheel 2</label>
-              <input type="text" id="diameter3" class="form-group mb-2 mr-sm-2" value="0">
+              <input type="text" id="diameter3" class="form-group mb-2 mr-sm-2 form-control" value="0">
+              <p id="errDiameter3" class="text-danger"></p>
             </div>
             <div class="form-inline">
               <label class="mb-2 mr-sm-2">Brand wheel 4</label>
-              <input type="text" id="idWheel4" class="form-group mb-2 mr-sm-2" value="a">
+              <input type="text" id="idWheel4" class="form-group mb-2 mr-sm-2 form-control" value="a">
               <label class="mb-2 mr-sm-2">Diameter wheel 4</label>
-              <input type="text" id="diameter4" class="form-group mb-2 mr-sm-2" value="0">
+              <input type="text" id="diameter4" class="form-group mb-2 mr-sm-2 form-control" value="0">
+              <p id="errDiameter1" class="text-danger"></p>
             </div>
             <p>
               <button class="btn btn-primary" onclick="wheelFormSubmit()">Add wheels</button>
-            </p>       
+            </p>
+          </div>
+          <div id="errWheelFormId" class="text-danger"> </div>
+        </div>
+        <!--end form wheels-->
       </div>
-      <div id="errWheelFormId" class="text-danger"> </div>
+      <div class="w-75 ">
+        <div id="carInfo" class="text-danger"> </div>
+
+        <div id="wheelInfo"> </div>
+
+      </div>
     </div>
-    <!--end form wheels-->
-  </div>
-  <div class="w-75 ">
-    <div id="carInfo" > </div>
-
-    <div id="wheelInfo"> </div>
-
-  </div>
-  </div>
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <p>Footer</p>
-  </div>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+      <p>Footer</p>
+    </div>
   </div>
   <script src="models/car.js"></script>
   <script src="models/wheel.js"></script>
