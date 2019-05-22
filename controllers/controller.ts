@@ -11,6 +11,7 @@ let errDiameter1 = <HTMLInputElement>document.getElementById("errDiameter1");
 let errDiameter2 = <HTMLInputElement>document.getElementById("errDiameter2");
 let errDiameter3 = <HTMLInputElement>document.getElementById("errDiameter3");
 let errDiameter4 = <HTMLInputElement>document.getElementById("errDiameter4");
+
 // error messages to the user through innerHTML
 let errCarInput = <HTMLInputElement>document.getElementById("errCarInput");
 let wheelsFormId = <HTMLInputElement>document.getElementById("wheelsFormId");
@@ -151,9 +152,6 @@ function validateDiameterNumberValue(diameterValue: number) {
         wheelformValidate = false;
         return false;
     }
-
-
-
 }
 
 function checkWheelFormEmptyValues(brand: any, diameter: any) {
@@ -167,6 +165,5 @@ function checkWheelFormEmptyValues(brand: any, diameter: any) {
         //send error message about empty fields
         errWheelFormId.innerHTML = "please fill in form!";
         return wheelformValidate = false;
-
     }
 }
