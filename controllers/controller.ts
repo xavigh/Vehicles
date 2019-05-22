@@ -6,13 +6,15 @@ let plate = <HTMLInputElement>document.getElementById("inputPlate");
 let brand = <HTMLInputElement>document.getElementById("inputBranch");
 let color = <HTMLInputElement>document.getElementById("inputColor");
 let formCarId = <HTMLInputElement>document.getElementById("formCarId");
-let wheelsFormId = <HTMLInputElement>document.getElementById("wheelsFormId");
-let errWheelFormId = <HTMLInputElement>document.getElementById("errWheelFormId");
 
 let errDiameter1 = <HTMLInputElement>document.getElementById("errDiameter1");
 let errDiameter2 = <HTMLInputElement>document.getElementById("errDiameter2");
 let errDiameter3 = <HTMLInputElement>document.getElementById("errDiameter3");
 let errDiameter4 = <HTMLInputElement>document.getElementById("errDiameter4");
+// error messages to the user through innerHTML
+let errCarInput = <HTMLInputElement>document.getElementById("errCarInput");
+let wheelsFormId = <HTMLInputElement>document.getElementById("wheelsFormId");
+let errWheelFormId = <HTMLInputElement>document.getElementById("errWheelFormId");
 
 let counterClicks: number = 0;
 let wheelformValidate: boolean = false;
@@ -29,9 +31,10 @@ function carFormSubmit() {
         displayCarData();
         formCarId.classList.add("d-none");
         wheelsFormId.classList.remove("d-none");
+        errCarInput.innerHTML = ""
 
     } else {
-        let errCarInfo = <HTMLInputElement>document.getElementById('carInfo');
+        let errCarInfo = <HTMLInputElement>document.getElementById('errCarInput');
         let errNumPlateId = <HTMLInputElement>document.getElementById('errNumPlate');
 
         let errNumPlate: string = "wrong number plate format";
@@ -40,7 +43,6 @@ function carFormSubmit() {
         if (validateNumPlate(plate.value)) {
             errCarInfo.innerHTML = errMissingCarInfo
             errNumPlateId.innerHTML = "";
-
 
         } else {
             errNumPlateId.innerHTML = errNumPlate;
@@ -66,7 +68,7 @@ function wheelFormSubmit() {
         validateDiameterNumberValue(Number(diameterId.value));
         if (!wheelformValidate) {
             wheelformValidate = false;
-            errWheelFormId.innerHTML = "numbers must be between 0.4 and 4";
+            errWheelFormId.innerHTML = "Diameter must be between 0.4 and 4";
             break;
         }
     }
@@ -97,7 +99,7 @@ function displayCarData() {
 
     let dataInput = <HTMLInputElement>document.getElementById('carInfo');
     dataInput.innerHTML =
-        "<table class='table  table-striped table-hover '>" +
+        "<table class='table-sm table-dark table-striped table-hover '>" +
         "<thead class=\"thead-dark\"><tr><th>Number Plate</th><th>Brand</th><th>color</th></tr></thead>" +
         " <tbody><tr>" +
         "<td>" + plate.value + "</td> " +
@@ -118,7 +120,7 @@ function displayWheelData() {
             "<td>" + userCar.wheels[i].diameter + "</td></tr>";
     }
     dataWheels.innerHTML =
-        "<table class='table  table-striped table-hover'>" +
+        "<table class='table table-dark table-striped table-hover'>" +
         "<thead class=\"thead-dark\"><tr><th>Brand</th><th>Diameter</th></thead>" +
         "<tbody>" + contentTable + "</tbody></table>";
 

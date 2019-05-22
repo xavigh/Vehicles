@@ -5,12 +5,14 @@ var plate = document.getElementById("inputPlate");
 var brand = document.getElementById("inputBranch");
 var color = document.getElementById("inputColor");
 var formCarId = document.getElementById("formCarId");
-var wheelsFormId = document.getElementById("wheelsFormId");
-var errWheelFormId = document.getElementById("errWheelFormId");
 var errDiameter1 = document.getElementById("errDiameter1");
 var errDiameter2 = document.getElementById("errDiameter2");
 var errDiameter3 = document.getElementById("errDiameter3");
 var errDiameter4 = document.getElementById("errDiameter4");
+// error messages to the user through innerHTML
+var errCarInput = document.getElementById("errCarInput");
+var wheelsFormId = document.getElementById("wheelsFormId");
+var errWheelFormId = document.getElementById("errWheelFormId");
 var counterClicks = 0;
 var wheelformValidate = false;
 // Gather input from user and display ------------------------
@@ -22,9 +24,10 @@ function carFormSubmit() {
         displayCarData();
         formCarId.classList.add("d-none");
         wheelsFormId.classList.remove("d-none");
+        errCarInput.innerHTML = "";
     }
     else {
-        var errCarInfo = document.getElementById('carInfo');
+        var errCarInfo = document.getElementById('errCarInput');
         var errNumPlateId = document.getElementById('errNumPlate');
         var errNumPlate = "wrong number plate format";
         var errMissingCarInfo = "missing user input ";
@@ -54,7 +57,7 @@ function wheelFormSubmit() {
         validateDiameterNumberValue(Number(diameterId.value));
         if (!wheelformValidate) {
             wheelformValidate = false;
-            errWheelFormId.innerHTML = "numbers must be between 0.4 and 4";
+            errWheelFormId.innerHTML = "Diameter must be between 0.4 and 4";
             break;
         }
     }
@@ -81,7 +84,7 @@ function empty(ObjClass) {
 function displayCarData() {
     var dataInput = document.getElementById('carInfo');
     dataInput.innerHTML =
-        "<table class='table  table-striped table-hover '>" +
+        "<table class='table-sm table-dark table-striped table-hover '>" +
             "<thead class=\"thead-dark\"><tr><th>Number Plate</th><th>Brand</th><th>color</th></tr></thead>" +
             " <tbody><tr>" +
             "<td>" + plate.value + "</td> " +
@@ -99,7 +102,7 @@ function displayWheelData() {
                 "<td>" + userCar.wheels[i].diameter + "</td></tr>";
     }
     dataWheels.innerHTML =
-        "<table class='table  table-striped table-hover'>" +
+        "<table class='table table-dark table-striped table-hover'>" +
             "<thead class=\"thead-dark\"><tr><th>Brand</th><th>Diameter</th></thead>" +
             "<tbody>" + contentTable + "</tbody></table>";
     console.log(dataWheels.innerHTML);
